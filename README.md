@@ -18,3 +18,7 @@ If you are developing a production application, we recommend using TypeScript wi
 ## Github pages deployment
 
 https://vite.dev/guide/static-deploy.html#github-pages
+
+# line plot data
+
+https://www.freecodecamp.org/news/learn-to-create-a-line-chart-using-d3-js-4f43f1ee716b/

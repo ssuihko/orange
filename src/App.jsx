@@ -3,6 +3,7 @@ import "./App.css";
 import Axios from "axios";
 import LinePlot from "./LinePlot";
 import ThreeScene from "./ThreeScene";
+import ThreeCube from "./ThreeCube";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,7 +33,7 @@ function App() {
         const requests = [];
 
         for (let i = 0; i < 10; i++) {
-          const url = `${INSULT_API}&t=${`Date.now()`}_${i}`;
+          const url = `${INSULT_API}&t={Date.now()}_${i}`;
           requests.push(Axios.get(url));
         }
 
@@ -50,11 +51,15 @@ function App() {
 
   return (
     <div class="text-blue-100 ...">
+       <div class="flex justify-center" style={{ padding: "20px" }}>
+        <ThreeCube />
+      </div>
       <h1 class="text-4xl font-bold m-4">Click counter: {count}</h1>
       <p>Click here :3</p>
       <button class="text-blue-950 outline-3 bg-white outline-cyan-300 outline-solid rounded-lg p-2 m-4" onClick={() => setCount(count + 1)}>
         BUTTON
       </button>
+
       {insults.length > 0 && (
         <>
           <h2 class="text-2xl font-bold m-4"> FETCHED INSULTS </h2>
@@ -68,10 +73,6 @@ function App() {
       <h1 class="text-3xl font-bold underline m-4">D3 lineplot</h1>
       <div class="flex justify-center" ref={plotRef}></div>
       <p></p>
-      <h1 class="text-3xl font-bold underline m-4">THREE cube</h1>
-      <div class="flex justify-center" style={{ padding: "20px" }}>
-        <ThreeScene />
-      </div>
     </div>
   );
 }

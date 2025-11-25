@@ -15,6 +15,7 @@ export default function ThreeScene() {
         const scene = new THREE.Scene();
 
         scene.background = new THREE.Color(0xeeeeee);
+        
         const camera = new THREE.PerspectiveCamera(
             75,
             mountRef.current.clientWidth / mountRef.current.clientHeight,

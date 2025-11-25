@@ -33,7 +33,7 @@ function App() {
         const requests = [];
 
         for (let i = 0; i < 10; i++) {
-          const url = `${INSULT_API}&t={Date.now()}_${i}`;
+          const url = `${INSULT_API}&t=${Date.now()}_${i}`;
           requests.push(Axios.get(url));
         }
 
